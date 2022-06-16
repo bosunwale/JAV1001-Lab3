@@ -1,11 +1,10 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class Dice {
     private int countSides;
     private Random generateRandomNumber;
     private String diceName;
-
+    private int currentSideUp;
 
     /*
     In the below code, there are three
@@ -22,18 +21,21 @@ public class Dice {
         countSides = 6;
         this.diceName="d6";
         generateRandomNumber = new Random();
+        currentSideUp = RollDice();
     }
     //Second Constructor
     public Dice(int numberOfSidesCount){
         this.countSides = numberOfSidesCount;
         this.diceName="d8";
         generateRandomNumber = new Random();
+        currentSideUp = RollDice();
     }
     //Third Constructor
     public Dice(int secondNumberOfSidesCount, String name){
         this.countSides = secondNumberOfSidesCount;
         this.diceName = name;
         generateRandomNumber = new Random();
+        currentSideUp = RollDice();
     }
     //getter method to return number of count sides
     public int getCountSides(){
@@ -43,11 +45,15 @@ public class Dice {
     one to the number of specified dice sides
      */
     public int RollDice(){
-        return generateRandomNumber.nextInt(countSides) + 1;
+        currentSideUp = generateRandomNumber.nextInt(countSides) + 1;
+        return currentSideUp;
     }
 
     //Override the toString() Method
     public String toString(){
         return "Rolling "+ diceName+ " with "+ countSides +" sides";
+    }
+    public String CurrentSideUp(){
+        return "The current side that is up is for "+ diceName+ " dice is: " + currentSideUp;
     }
 }

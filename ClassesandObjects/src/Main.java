@@ -1,3 +1,9 @@
+/*
+String name = "John Oluwale";
+String studentNumber = "A00246405";
+String description = "A dice game with six, ten, and twenty sides"
+ */
+
 public class Main {
     public static void main(String[] args) {
         Dice sixSidesDice = new Dice();
@@ -11,6 +17,7 @@ public class Main {
             System.out.print(sixSidesDice.RollDice() + ", ");
         }
         System.out.println("]");
+        System.out.println(sixSidesDice.CurrentSideUp()+"\n");
         //Rolling ten sides dice
         System.out.println(tenSidesDice);
         System.out.print("[ ");
@@ -18,6 +25,7 @@ public class Main {
             System.out.print(tenSidesDice.RollDice() + ", ");
         }
         System.out.println("]");
+        System.out.println(tenSidesDice.CurrentSideUp()+"\n");
         //Rolling twenty sides dice
         System.out.println(twentySidesDice);
         System.out.print("[ ");
@@ -25,5 +33,6 @@ public class Main {
             System.out.print(twentySidesDice.RollDice() + ", ");
         }
         System.out.println("]");
+        System.out.println(twentySidesDice.CurrentSideUp()+"\n");
     }
 }
